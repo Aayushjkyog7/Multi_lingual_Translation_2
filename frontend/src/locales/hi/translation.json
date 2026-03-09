@@ -1,0 +1,18 @@
+{
+  "appTitle": "सामग्री प्रकार दर्शक",
+  "selectContentType": "सामग्री प्रकार चुनें",
+  "loading": "लोड हो रहा है...",
+  "noData": "कोई डेटा उपलब्ध नहीं",
+  "items": "आइटम",
+  "failedToLoadContentTypes": "सामग्री प्रकार लोड करने में विफल",
+  "failedToLoad": "लोड करने में विफल",
+  "failedToLoadVideos": "वीडियो लोड करने में विफल",
+  "switchToHindi": "हिंदी में बदलें",
+  "switchToEnglish": "अंग्रेजी में बदलें",
+  "contentTypes": {
+    "videos": "वीडियो",
+    "moments": "क्षण",
+    "podcasts": "पॉडकास्ट",
+    "articles": "लेख"
+  }
+}
