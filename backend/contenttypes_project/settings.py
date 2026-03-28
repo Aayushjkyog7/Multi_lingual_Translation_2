@@ -101,23 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-# -----------------------------------------------------------------------------
-# Locale configuration (single source of truth for all locale-related behavior)
-# Add a code here, then: makemigrations → migrate, add locale .po/.mo, frontend locale files
-# -----------------------------------------------------------------------------
-SUPPORTED_LOCALES = ('en', 'hi')
-DEFAULT_LOCALE = 'en'
-
-# Display names for Django LANGUAGES (optional; keys should match SUPPORTED_LOCALES)
-LOCALE_DISPLAY_NAMES = {
-    'en': 'English',
-    'hi': 'Hindi',
-}
-
-# -----------------------------------------------------------------------------
-# Derived settings (do not edit; driven by SUPPORTED_LOCALES / DEFAULT_LOCALE)
-# -----------------------------------------------------------------------------
-LANGUAGE_CODE = DEFAULT_LOCALE
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -127,17 +111,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-LANGUAGES = tuple((code, LOCALE_DISPLAY_NAMES.get(code, code)) for code in SUPPORTED_LOCALES)
+# Supported languages
+LANGUAGES = (
+    ('en', 'English'),
+    ('hi', 'Hindi'),
+)
 
 # Locale paths for translation files
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
-# Modeltranslation (DB columns per locale)
-MODELTRANSLATION_DEFAULT_LANGUAGE = DEFAULT_LOCALE
-MODELTRANSLATION_LANGUAGES = SUPPORTED_LOCALES
-MODELTRANSLATION_FALLBACK_LANGUAGES = SUPPORTED_LOCALES
+# Modeltranslation settings
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_LANGUAGES = ('en', 'hi')
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('en', 'hi')
 
 
 # Static files (CSS, JavaScript, Images)
