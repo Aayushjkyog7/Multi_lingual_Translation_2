@@ -1,0 +1,161 @@
+.swamiji-app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.swamiji-container {
+  max-width: 760px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.swamiji-header {
+  position: relative;
+  padding: 32px 40px 28px;
+  background: linear-gradient(145deg, #2d1b4e 0%, #4a2c7a 45%, #667eea 100%);
+  color: #fff;
+}
+
+.swamiji-back {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  margin-bottom: 24px;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.swamiji-back:hover {
+  color: #fff;
+  border-bottom-color: #f39c12;
+}
+
+.swamiji-hero {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.swamiji-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 12px;
+}
+
+.swamiji-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.swamiji-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 32em;
+  margin: 0 auto;
+}
+
+.swamiji-main {
+  padding: 36px 40px 48px;
+}
+
+.swamiji-section {
+  margin-bottom: 40px;
+}
+
+.swamiji-section:last-child {
+  margin-bottom: 0;
+}
+
+.swamiji-section--accent {
+  padding: 28px 28px 32px;
+  margin-left: -8px;
+  margin-right: -8px;
+  background: linear-gradient(135deg, #f8f6ff 0%, #f0f4ff 100%);
+  border-radius: 16px;
+  border: 1px solid #e8e4f5;
+}
+
+.swamiji-section-head {
+  margin-bottom: 20px;
+}
+
+.swamiji-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #764ba2;
+  background: rgba(102, 126, 234, 0.12);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.swamiji-badge--secondary {
+  color: #c0392b;
+  background: rgba(243, 156, 18, 0.15);
+}
+
+.swamiji-section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.swamiji-section-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #667eea;
+  margin: 0;
+}
+
+.swamiji-body p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.swamiji-body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .swamiji-app {
+    padding: 20px 12px;
+  }
+
+  .swamiji-header,
+  .swamiji-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .swamiji-title {
+    font-size: 1.85rem;
+  }
+
+  .swamiji-section--accent {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 22px 20px;
+  }
+}
