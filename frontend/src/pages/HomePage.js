@@ -9,18 +9,23 @@ const API_BASE_URL = 'http://localhost:8000/api';
 function HomePage() {
   const { t, i18n } = useTranslation();
   const [contentTypes, setContentTypes] = useState([]);
+  const [contentTypesLoading, setContentTypesLoading] = useState(true);
+  const [contentTypesError, setContentTypesError] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
   const [contentData, setContentData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setContentTypesError(null);
     axios.get(`${API_BASE_URL}/content-types`)
       .then(response => {
         setContentTypes(response.data.contentTypes);
+        setContentTypesLoading(false);
       })
       .catch(err => {
-        setError(t('failedToLoadContentTypes'));
+        setContentTypesError(t('failedToLoadContentTypes'));
+        setContentTypesLoading(false);
         console.error(err);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -104,17 +109,25 @@ function HomePage() {
 
         <div className="content-types-list">
           <h2 className="section-title">{t('selectContentType')}</h2>
-          <div className="type-buttons">
-            {contentTypes.map(type => (
-              <button
-                key={type}
-                className={`type-button ${selectedType === type ? 'active' : ''}`}
-                onClick={() => handleTypeSelect(type)}
-              >
-                {getTypeLabel(type)}
-              </button>
-            ))}
-          </div>
+          {contentTypesLoading && (
+            <div className="loading">{t('loading')}</div>
+          )}
+          {contentTypesError && (
+            <div className="error">{contentTypesError}</div>
+          )}
+          {!contentTypesLoading && !contentTypesError && (
+            <div className="type-buttons">
+              {contentTypes.map(type => (
+                <button
+                  key={type}
+                  className={`type-button ${selectedType === type ? 'active' : ''}`}
+                  onClick={() => handleTypeSelect(type)}
+                >
+                  {getTypeLabel(type)}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {selectedType && (
